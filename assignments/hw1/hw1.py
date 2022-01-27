@@ -1,15 +1,8 @@
-"""
-Name: <your name goes here – first and last>
-<ProgramName>.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
-
-Certification of Authenticity:
-<include one of the following>
-I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
-"""
-from graphics import *
+"""Name: Joshua Bee son
+<hw1.py>
+Problem: This program solves the issue of having to manually calculate several simple equations.
+I certify that this assignment is entirely my own work."""
 
 
 
@@ -48,7 +41,7 @@ def coffee():
 
 def kilometers_to_miles():
     kilometers = eval(input("How many Kilometers did you travel? "))
-    miles = round(float(kilometers / 1.61), 2)
+    miles = float(kilometers / 1.61)
     print("That's ", miles, " miles!")
 
 
