@@ -1,6 +1,6 @@
 """Name: Joshua Bee son
 <hw1.py>
-Problem: This program solves the issue of having to manually calculate several simple equations.
+Problem:f This program solves the issue of having to manually calculate several simple equations.
 I certify that this assignment is entirely my own work."""
 import math
 
