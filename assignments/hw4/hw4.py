@@ -2,6 +2,8 @@
 <hw1.py>
 Problem:f This program solves the issue of having to manually calculate several simple equations.
 I certify that this assignment is entirely my own work."""
+import math
+
 from graphics import *
 
 
@@ -38,7 +40,7 @@ def squares():
         new_shape.setOutline("red")
         new_shape.setFill("red")
         new_shape.draw(win)
-
+    Text(Point(200, 20), "Click to close").draw(win)
     win.getMouse()
     win.close()
 
@@ -46,7 +48,7 @@ def squares():
 def rectangle():
     width = 400
     height = 400
-    win = GraphWin("Clicks", width, height)
+    win = GraphWin("Rectangle", width, height)
     font_size = 12
     #what I need, one rectangle object and 3 text boxes
     prompt = Text(Point(200,20), "Click twice at two opposite corners to create a rectangle")
@@ -80,16 +82,58 @@ def rectangle():
     info_area.draw(win)
     area.draw(win)
 
+    Text(Point(200, 20), "Click to close").draw(win)
     win.getMouse()
     win.close()
     pass
 
 
 def circle():
+    width = 400
+    height = 400
+    win = GraphWin("Circle", width, height)
+
+    p1 = win.getMouse()
+    p2 = win.getMouse()
+
+    radius = math.sqrt(abs(((p1.getX() - p2.getX())**2) + ((p1.getY() - p2.getY())**2)))
+    circle = Circle(p1,radius)
+    circle.draw(win)
+
+    p = radius
+
+    perimeter = Text(Point(200,350), "Radius: ")
+    info_per = perimeter.clone()
+    info_per.move(100,0)
+    info_per.setText(p)
+    info_per.draw(win)
+    perimeter.draw(win)
+
+    Text(Point(200, 20), "Click to close").draw(win)
+    win.getMouse()
+    win.close()
     pass
 
 
 def pi2():
+    acc2 = 1
+    original = 4 / 1
+    terms = eval(input("Enter the number of terms to sum"))
+
+    for i in range(1, terms):
+        if (i % 2) == 0:
+            acc2 = acc2 + 2
+            original = original + (4/acc2)
+
+
+        else:
+            acc2 = acc2 + 2
+            original = original - (4/acc2)
+    print("pi approximation: ", original)
+    print("Accuracy: ", abs(math.pi - original))
+
+
+
     pass
 
 
